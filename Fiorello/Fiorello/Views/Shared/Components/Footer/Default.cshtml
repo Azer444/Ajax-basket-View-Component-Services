@@ -10,7 +10,7 @@
                     <ul class="list-unstyled mt-4">
                         @foreach (var item in Model)
                         {
-                            <li><a class="text-black-50" href="">@item.Company</a></li>
+                            <li><a class="text-black-50" href="">@item.Customer</a></li>
                         }
                     </ul>
                 </div>
@@ -22,7 +22,7 @@
                         @foreach (var item in Model)
                         {
 
-                            <li><a class="text-black-50" href="">@item.Archive</a></li>
+                            <li><a class="text-black-50" href="">@item.Company</a></li>
 
                         }
                     </ul>
@@ -43,12 +43,10 @@
                 <div class="item">
                     <h6>ARCHIVE</h6>
                     <ul class="list-unstyled mt-4">
-                        <li><a class="text-black-50" href="">Designer Shoes</a></li>
-                        <li><a class="text-black-50" href="">Gallery</a></li>
-                        <li><a class="text-black-50" href="">Pricing</a></li>
-                        <li><a class="text-black-50" href="">Feature Index</a></li>
-                        <li><a class="text-black-50" href="">Login</a></li>
-                        <li><a class="text-black-50" href="">Help & Support</a></li>
+                        @foreach (var item in Model)
+                        {
+                            <li><a class="text-black-50" href="">@item.Archive</a></li>
+                        }
                     </ul>
                 </div>
             </div>

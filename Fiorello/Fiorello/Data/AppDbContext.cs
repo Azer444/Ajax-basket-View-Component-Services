@@ -12,14 +12,24 @@ public class AppDbContext : DbContext
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
     }
+        public DbSet<Header> Headers { get; set; }
         public DbSet<Footer> Footers { get; set; }
         public DbSet<Blog> Blogs { get; set; }
     public DbSet<Setting> Settings { get; set; }
     protected  override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Header>().HasQueryFilter(m => !m.IsDeleted);
         modelBuilder.Entity<Footer>().HasQueryFilter( m => !m.IsDeleted);
         modelBuilder.Entity<Blog>().HasQueryFilter(m => !m.IsDeleted);
         modelBuilder.Entity<Setting>().HasQueryFilter(m => !m.IsDeleted);
+        modelBuilder.Entity<Header>().HasData(
+            new Header
+            {
+                Id = 1,
+                IsDeleted = false,
+                Image = "logo.png"
+            }
+            );
         modelBuilder.Entity<Blog>().HasData(
             new Blog
             {

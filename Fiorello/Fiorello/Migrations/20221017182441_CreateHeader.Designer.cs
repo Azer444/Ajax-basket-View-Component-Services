@@ -4,14 +4,16 @@ using Fiorello.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Fiorello.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221017182441_CreateHeader")]
+    partial class CreateHeader
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,7 +51,7 @@ namespace Fiorello.Migrations
                         new
                         {
                             Id = 1,
-                            Date = new DateTime(2022, 10, 17, 22, 29, 10, 54, DateTimeKind.Local).AddTicks(8707),
+                            Date = new DateTime(2022, 10, 17, 22, 24, 41, 78, DateTimeKind.Local).AddTicks(6458),
                             Desc = "Desc1",
                             Image = "blog-feature-img-1.jpg",
                             IsDeleted = false,
@@ -58,7 +60,7 @@ namespace Fiorello.Migrations
                         new
                         {
                             Id = 2,
-                            Date = new DateTime(2022, 10, 17, 22, 29, 10, 56, DateTimeKind.Local).AddTicks(4355),
+                            Date = new DateTime(2022, 10, 17, 22, 24, 41, 79, DateTimeKind.Local).AddTicks(6711),
                             Desc = "Desc2",
                             Image = "blog-feature-img-3.jpg",
                             IsDeleted = false,
@@ -67,7 +69,7 @@ namespace Fiorello.Migrations
                         new
                         {
                             Id = 3,
-                            Date = new DateTime(2022, 10, 17, 22, 29, 10, 56, DateTimeKind.Local).AddTicks(4409),
+                            Date = new DateTime(2022, 10, 17, 22, 24, 41, 79, DateTimeKind.Local).AddTicks(6742),
                             Desc = "Desc3",
                             Image = "blog-feature-img-4.jpg",
                             IsDeleted = false,
@@ -118,14 +120,6 @@ namespace Fiorello.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Headers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Image = "logo.png",
-                            IsDeleted = false
-                        });
                 });
 
             modelBuilder.Entity("Fiorello.Models.Setting", b =>
